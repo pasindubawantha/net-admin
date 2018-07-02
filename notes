@@ -1,2 +1,4 @@
-docker pull mysql/mysql-server
-docker run --name=mysql -d mysql/mysql-server
+docker ps
+docker exec -it <container name> /bin/bash
+
+docker-compose up --build

@@ -3,16 +3,16 @@ All eode is under the GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007.
 -->
 
 <?php
-
 include ("config.php");
 
 // connect to the mysql server
-$link = mysql_connect($db_host, $db_user, $db_pass)
-or die ("Could not connect to mysql because ".mysql_error());
+echo "a";
+$link = mysqli_connect($db_host, $db_user, $db_pass)
+or die ("Could not connect to mysql because ".mysqli_error());
 
 // select the database
-mysql_select_db($db_name)
-or die ("Could not select database because ".mysql_error());
+mysqli_select_db($db_name)
+or die ("Could not select database because ".mysqli_error());
 
 // create table on database
 $create = "create table $db_table (
@@ -24,7 +24,7 @@ PRIMARY KEY (id),
 UNIQUE KEY username (username)
 );";
 
-mysql_query($create)
-or die ("Could not create tables because ".mysql_error());
+mysqli_query($create)
+or die ("Could not create tables because ".mysqli_error());
 echo "Complete.";
 ?>
